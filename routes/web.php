@@ -43,6 +43,8 @@ Route::get('/veritas','VeritasController@index');
 
 Route::get('/bonds', 'BondsController@index');
 
+Route::get('/bonds/create', 'BondsController@create');
+
 
 //Route::prefix('veritas')->group(function(){
 //

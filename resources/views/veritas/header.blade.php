@@ -11,7 +11,7 @@
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-xs-3">
+                <div class="col-lg-3">
                     <div class="sidebar">
                         <ul class="widget widget-menu unstyled">
                             <li class="active"><a href="/veritas"><i class="menu-icon icon-dashboard"></i>고객별투자현황
@@ -42,7 +42,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-lg-9">
                     <div class="contents">
                         @yield('contents')
                     </div>

@@ -5,7 +5,7 @@
 
 <style>
     .col0{
-        padding-right: 5px;
+        padding-right: 10px;
         text-align: left;
         font-size: 10px;
     }
@@ -20,7 +20,7 @@
             <div>
                 <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
                     <thead>
-                    <tr style="font-size:10px !important;">
+                    <tr style="font-size:12px !important;">
                         <th class="col0">투자자</th>
                         <th class="col0">투자물건</th>
                         <th class="col0">투자금</th>
@@ -31,14 +31,16 @@
                     </thead>
 
                     <tbody>
-                    <tr style="font-size:10px !important;">
-                        <th class="col0">고소득</th>
-                        <th class="col0">신림동모텔</th>
-                        <th class="col0">100,000,000원</th>
-                        <th class="col0">13%</th>
-                        <th class="col0">77일</th>
-                        <th class="col0">2,742,324원</th>
+                    @foreach($bonds as $bond)
+                    <tr style="font-size:12px !important;">
+                        <th class="col0">{{ $bond->investment_name }}</th>
+                        <th class="col0">{{ $bond->i_id }}</th>
+                        <th class="col0">{{ $bond->price }}원</th>
+                        <th class="col0">{{ $bond->p_goal }}%</th>
+                        <th class="col0">{{ $bond->agreement }}일</th>
+                        <th class="col0">{{ $bond->goal_out }}원</th>
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -46,12 +48,12 @@
     </div>
 
     <br>
-    <button id="exc_btn" onclick="setExcel();">엑셀로추가</button>
-    <button id="inv_btn" onclick="invest_input();">+</button>
+    <button id="inv_btn"><a href="/bonds/create">+</a></button>
     <button id="mod_btn" onclick="setModify();">Modify</button>
     <button id="del_btn" onclick="setDelete();">Delete</button>
 
 </div>
 <!--/.content-->
+@yield('iframe')
 
 @endsection
