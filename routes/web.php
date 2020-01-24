@@ -41,6 +41,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/veritas','VeritasController@index');
 
+Route::get('/bonds', 'BondsController@index');
+
 
 //Route::prefix('veritas')->group(function(){
 //

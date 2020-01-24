@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\bond;
 
-class VeritasController extends Controller
+class BondsController extends Controller
 {
     public function index()
     {
-        return view('veritas.layout');
+        return view('veritas.bond');
     }
 }
