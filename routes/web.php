@@ -45,6 +45,8 @@ Route::get('/bonds', 'BondsController@index');
 
 Route::get('/bonds/create', 'BondsController@create');
 
+Route::post('/bonds', 'BondsController@store');
+
 
 //Route::prefix('veritas')->group(function(){
 //

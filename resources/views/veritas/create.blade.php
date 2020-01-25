@@ -10,13 +10,14 @@
                                 <h3>투자관리</h3>
                             </div>
                             <div class="module-body">
-                                <form class="form-horizontal row-fluid" name="user_input_form">
+                                <form class="form-horizontal row-fluid" name="user_input_form" action="/bonds" method="POST">
+                                    @csrf
                                     <p><strong>등록하기</strong></p>
                                     <div class="control-group">
                                         <label class="control-label">투자유치</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" name="investment" id="investment" placeholder="" class="span12">
+                                                <input type="text" name="investment" id="investment" placeholder="" class="w-full span12">
                                             </div>
                                         </div>
                                     </div>
@@ -24,7 +25,7 @@
                                         <label class="control-label">투자자</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" name="i_id" id="i_id" placeholder="" class="span12">
+                                                <input type="text" name="investment_name" id="investment_name" placeholder="" class="span12">
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +56,7 @@
                                     <div class="control-group">
                                         <label class="control-label" for="contract_date">계약일자</label>
                                         <div class="controls">
-                                            <input type="date" value='' id="c_date" name="c_date" class="span12" onchange="cdate(this);"></input>
+                                            <input type="date" value='' id="c_date" name="c_date" class="span12" onchange="cdate(this)">
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -258,7 +259,7 @@
                                     </div>
                                     <div class="control-group">
                                         <div class="controls">
-                                            <button type="button" onclick="invest_submit()" class="btn">등록하기</button>
+                                            <button type="submit">등록하기</button>
                                         </div>
                                     </div>
                                 </form>

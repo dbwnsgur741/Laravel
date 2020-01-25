@@ -3,13 +3,12 @@
 
 @section('contents');
 
-<style>
-    .col0{
-        padding-right: 10px;
-        text-align: left;
-        font-size: 10px;
-    }
-</style>
+@isset($values)
+@foreach($values as $value)
+    {{ $value }}
+@endforeach
+@endisset
+
 <div class="content ml-5">
 
     <div class="module">

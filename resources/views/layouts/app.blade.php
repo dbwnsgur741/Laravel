@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-      <link rel="stylesheet" href="{{ mix('css/tailwind.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
