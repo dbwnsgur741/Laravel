@@ -5,7 +5,6 @@
 - PHP version -- 7.2
 - Composer version -- 1.9.2
 - npm version -- 6.13.6
-- bootstrap
 - EC2 Ubuntu ( 18.04 )
 
 ## How to Install Laravel in ubuntu
