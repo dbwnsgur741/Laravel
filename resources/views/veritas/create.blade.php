@@ -118,7 +118,7 @@
                                         <label class="control-label">지급배당액</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <span class="add-on">₩</span><input type="text" name="_price" id="_price" placeholder="" class="span12" readonly>
+                                                <span class="add-on">₩</span><input type="text" name="m_price" id="m_price" placeholder="" class="span12" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                         <label class="control-label">원천징수액</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <span class="add-on">₩</span><input type="text" name="_price2" id="_price2" placeholder="" class="span12" readonly>
+                                                <span class="add-on">₩</span><input type="text" name="m_price2" id="m_price2" placeholder="" class="span12" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +167,7 @@
                                         <label class="control-label" for="fees">설정비용</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" name="_price3" id="_price3" placeholder="" class="span12"><span class="add-on">원</span>
+                                                <input type="text" name="m_price3" id="m_price3" placeholder="" class="span12"><span class="add-on">원</span>
                                             </div>
                                         </div>
                                     </div>

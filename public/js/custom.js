@@ -132,14 +132,14 @@ function get_price(day) {
         _price = _temp[0];
 
         console.log(_price);
-        document.getElementById('_price').value = _price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById('m_price').value = _price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         get_price2(_price);
     }
 }
 
 function get_price2(_price) {
-    var _price2 = document.getElementById('_price2'); // 원천징수액
+    var _price2 = document.getElementById('m_price2'); // 원천징수액
     var p_price = document.getElementById('p_price').value; // 원천징수율
 
     p_price = parseFloat(p_price) / 100; // 원천징수율
@@ -213,3 +213,16 @@ function select_change(value, _id) {
 
     }
 }
+
+function setModify()
+{
+    var check = $('.del_check');
+    if (check.css('display') == "none"){
+        check.show();
+    }
+    else{
+        check.hide();
+    }
+}
+
+

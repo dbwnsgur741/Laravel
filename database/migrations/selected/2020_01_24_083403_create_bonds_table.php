@@ -14,7 +14,7 @@ class CreateBondsTable extends Migration
     public function up()
     {
         Schema::create('bonds', function (Blueprint $table) {
-            $table->bigIncrements('idx');
+            $table->bigIncrements('id');
             $table->string('investment')->nullable();
             $table->string('investment_name')->nullable();
             $table->string('i_id')->nullable();
@@ -28,13 +28,13 @@ class CreateBondsTable extends Migration
             $table->string('c_date3')->nullable();
             $table->string('c_date4')->nullable();
             $table->string('invest_date')->nullable();
-            $table->string('_price')->nullable();
+            $table->string('m_price')->nullable();
             $table->string('p_price')->nullable();
-            $table->string('_price2')->nullable();
+            $table->string('m_price2')->nullable();
             $table->string('t_price')->nullable();
             $table->string('contract')->nullable();
             $table->string('c_date5')->nullable();
-            $table->string('_price3')->nullable();
+            $table->string('m_price3')->nullable();
             $table->string('confirm1')->nullable();
             $table->string('confirm2')->nullable();
             $table->string('confirm3')->nullable();

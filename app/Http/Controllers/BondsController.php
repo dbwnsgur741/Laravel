@@ -69,13 +69,13 @@ class BondsController extends Controller
           'goal_out' =>  $request->input('goal_out',' '),
           'c_date4' =>  $request->input('c_date4',' '),
           'invest_date' =>  $request->input('invest_date',' '),
-          '_price' =>  $request->input('_price',' '),
+          'm_price' =>  $request->input('m_price',' '),
           'p_price' =>  $request->input('p_price',' '),
-          '_price2' =>  $request->input('_price2',' '),
+          'm_price2' =>  $request->input('m_price2',' '),
           't_price' =>  $request->input('t_price',' '),
           'contract' => request('contract'),
           'c_date5' =>  $request->input('c_date5',' '),
-          '_price3' =>  $request->input('_price3',' '),
+          'm_price3' =>  $request->input('m_price3',' '),
           'confirm1' => request('confirm1'),
           'confirm2' => request('confirm2'),
           'confirm3' => request('confirm3'),
@@ -90,5 +90,15 @@ class BondsController extends Controller
       ]);
 
         return redirect('/bonds');
+    }
+
+    public function edit(Bond $bond)
+    {
+        $bonds = Bond::latest()->get();
+        
+        return view('veritas.edit')->with([
+            'bond'=>$bond,
+            'bonds'=>$bonds
+        ]);
     }
 }
