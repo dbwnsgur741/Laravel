@@ -49,6 +49,10 @@ Route::post('/bonds', 'BondsController@store');
 
 Route::get('/bonds/{bond}/edit', 'BondsController@edit');
 
+Route::put('/bonds/{bond}', 'BondsController@update');
+
+Route::delete('/bonds/{bond}' ,'BondsController@destroy');
+
 //Route::prefix('veritas')->group(function(){
 //
 //    Router::get('/','VeritasController@index');

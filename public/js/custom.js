@@ -216,13 +216,39 @@ function select_change(value, _id) {
 
 function setModify()
 {
-    var check = $('.del_check');
+    var check = $('.choice');
+    var mod_check = $('.mod_check');
+    var del_check = $('.del_check');
+
+    del_check.hide();
+
     if (check.css('display') == "none"){
         check.show();
+        mod_check.show();
     }
     else{
         check.hide();
+        mod_check.hide();
     }
 }
+
+function setDelete()
+{
+    var check = $('.choice');
+    var mod_check = $('.mod_check');
+    var del_check = $('.del_check');
+
+    mod_check.hide();
+
+    if (check.css('display') == "none"){
+        check.show();
+        del_check.show();
+    }
+    else{
+        check.hide();
+        del_check.hide();
+    }
+}
+
 
 

@@ -95,10 +95,55 @@ class BondsController extends Controller
     public function edit(Bond $bond)
     {
         $bonds = Bond::latest()->get();
-        
+
         return view('veritas.edit')->with([
             'bond'=>$bond,
             'bonds'=>$bonds
         ]);
+    }
+
+    public function update(Bond $bond, Request $request)
+    {
+        $bond->update([
+            'investment' => $request->input('investment',' '),
+            'investment_name' =>$request->input('investment',' '),
+            'i_id' => $request->input('i_id',' '),
+            'price' => $request->input('price',' '),
+            'p_goal' => $request->input('p_goal',' '),
+            'c_date' => $request->input('c_date',' '),
+            'c_date2' => $request->input('c_date2',' '),
+            'c_date3' => $request->input('c_date3',' '),
+            'agreement' =>  $request->input('agreement',' '),
+            'goal_in' =>  $request->input('goal_in',' '),
+            'goal_out' =>  $request->input('goal_out',' '),
+            'c_date4' =>  $request->input('c_date4',' '),
+            'invest_date' =>  $request->input('invest_date',' '),
+            'm_price' =>  $request->input('m_price',' '),
+            'p_price' =>  $request->input('p_price',' '),
+            'm_price2' =>  $request->input('m_price2',' '),
+            't_price' =>  $request->input('t_price',' '),
+            'contract' => request('contract'),
+            'c_date5' =>  $request->input('c_date5',' '),
+            'm_price3' =>  $request->input('m_price3',' '),
+            'confirm1' => request('confirm1'),
+            'confirm2' => request('confirm2'),
+            'confirm3' => request('confirm3'),
+            'confirm4' => request('confirm4'),
+            'confirm5' => request('confirm5'),
+            'law_office' =>  $request->input('law_office',' '),
+            'etc' =>  $request->input('etc',' '),
+            'address' =>  $request->input('address',' '),
+            'phone' =>  $request->input('phone',' '),
+            'birth' =>  $request->input('birth',' '),
+            'email' =>  $request->input('email',' '),
+        ]);
+
+        return redirect('/bonds');
+    }
+
+    public function destroy(Bond $bond)
+    {
+        $bond->delete();
+        return redirect('/bonds');
     }
 }

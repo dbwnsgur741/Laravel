@@ -9,7 +9,8 @@
                         <h3>투자관리</h3>
                     </div>
                     <div class="module-body">
-                        <form class="form-horizontal row-fluid" name="user_input_form" action="/bonds" method="POST">
+                        <form class="form-horizontal row-fluid" name="user_input_form" action="/bonds/{{ $bond->id }}" method="POST">
+                            @method('PUT')
                             @csrf
                             <p><strong>등록하기</strong></p>
                             <div class="control-group">
@@ -93,7 +94,7 @@
                                 <label class="control-label">목표상환액</label>
                                 <div class="controls">
                                     <div class="input-append">
-                                        <span class="add-on">₩</span><input type="text" value="{{ $bond->goal_out }}" id="goal_out" placeholder="" class="span12" readonly>
+                                        <span class="add-on">₩</span><input type="text" value="{{ $bond->goal_out }}" name="goal_out" id="goal_out" placeholder="" class="span12" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -149,9 +150,13 @@
                                 <label class="control-label" for="payment">계약서확인</label>
                                 <div class=" controls">
                                     <select id="contract" name="contract" tabindex="1" data-placeholder="Select here.." class="span12">
+                                        @if(  $bond->contract  == "0")
                                         <option value='1'>○</option>
-                                        <option value='0'>x</option>
-
+                                        <option value='0' selected="selected">x</option>
+                                            @else
+                                            <option value='1' selected="selected">○</option>
+                                            <option value='0'>x</option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
@@ -174,8 +179,13 @@
                                 <label class="control-label" for="check_2">등기부등본 질권자 설정 확인</label>
                                 <div class="controls">
                                     <select id="confirm1" name="confirm1" tabindex="1" data-placeholder="Select here.." class="span12">
-                                        <option value='1'>○</option>
-                                        <option value='0'>x</option>
+                                        @if(  $bond->confirm1  == "0")
+                                            <option value='1'>○</option>
+                                            <option value='0' selected="selected">x</option>
+                                        @else
+                                            <option value='1' selected="selected">○</option>
+                                            <option value='0'>x</option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
@@ -183,8 +193,13 @@
                                 <label class="control-label" for="check_3">법원 질권자 설정 확인</label>
                                 <div class="controls">
                                     <select id="confirm2" name="confirm2" tabindex="1" data-placeholder="Select here.." class="span12">
-                                        <option value='1'>○</option>
-                                        <option value='0'>x</option>
+                                        @if(  $bond->confirm2  == "0")
+                                            <option value='1'>○</option>
+                                            <option value='0' selected="selected">x</option>
+                                        @else
+                                            <option value='1' selected="selected">○</option>
+                                            <option value='0'>x</option>
+                                        @endif
 
                                     </select>
                                 </div>
@@ -193,8 +208,13 @@
                                 <label class="control-label" for="check_4">등기完통지서</label>
                                 <div class="controls">
                                     <select id="confirm3" name="confirm3" tabindex="1" data-placeholder="Select here.." class="span12">
-                                        <option value='1'>○</option>
-                                        <option value='0'>x</option>
+                                        @if(  $bond->confirm3  == "0")
+                                            <option value='1'>○</option>
+                                            <option value='0' selected="selected">x</option>
+                                        @else
+                                            <option value='1' selected="selected">○</option>
+                                            <option value='0'>x</option>
+                                        @endif
 
                                     </select>
                                 </div>
@@ -203,8 +223,13 @@
                                 <label class="control-label" for="check_5">등기필증</label>
                                 <div class="controls">
                                     <select id="confirm4" name="confirm4" tabindex="1" data-placeholder="Select here.." class="span12">
-                                        <option value='1'>○</option>
-                                        <option value='0'>x</option>
+                                        @if(  $bond->confirm4  == "0")
+                                            <option value='1'>○</option>
+                                            <option value='0' selected="selected">x</option>
+                                        @else
+                                            <option value='1' selected="selected">○</option>
+                                            <option value='0'>x</option>
+                                        @endif
 
                                     </select>
                                 </div>
@@ -213,8 +238,13 @@
                                 <label class="control-label" for="check_6">고객확인</label>
                                 <div class="controls">
                                     <select id="confirm5" name="confirm5" tabindex="1" data-placeholder="Select here.." class="span12">
-                                        <option value='1'>○</option>
-                                        <option value='0'>x</option>
+                                        @if(  $bond->confirm5  == "0")
+                                            <option value='1'>○</option>
+                                            <option value='0' selected="selected">x</option>
+                                        @else
+                                            <option value='1' selected="selected">○</option>
+                                            <option value='0'>x</option>
+                                        @endif
 
                                     </select>
                                 </div>
@@ -258,7 +288,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="controls">
-                                    <button type="submit">등록하기</button>
+                                    <button type="submit">수정하기</button>
                                 </div>
                             </div>
                         </form>
